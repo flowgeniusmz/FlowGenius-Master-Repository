@@ -32,4 +32,5 @@ with tab_df_filtered2:
         with st.echo(code_location="below"):
             df2 = pd.read_csv("data/jetfuel_data.csv")
             st.dataframe(dfFilter.filter_dataframe(df2, 'filtered2'))
+            st.markdown("""**NOTE**: The function dfFilter.filter_dataframe is not displayed in this code. Please see the GitHub functions for details""")
 
