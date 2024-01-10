@@ -36,14 +36,29 @@ with tab_df_filtered2:
             st.markdown("""**NOTE**: The function dfFilter.filter_dataframe is not displayed in this code. Please see the GitHub functions for details""")
 
 with tab_df_conditiontree:
-    with st.echo(code_location="below"):
-        df3 = pd.read_csv("data/jetfuel_data.csv")
-        # Basic field configuration from dataframe
-        config = config_from_dataframe(df3)
-        
-        # Condition tree
-        query_string = condition_tree(config)
-        
-        # Filtered dataframe
-        df4 = df3.query(query_string)
+    @st.cache_data
+    def load_data():
+        df = pd.read_csv(
+            'https://media.githubusercontent.com/media/datablist/sample-csv-files/main/files/people/people-100.csv',
+            index_col=0,
+            parse_dates=['Date of birth'],
+            date_format='%Y-%m-%d')
+        df['Age'] = ((pd.Timestamp.today() - df['Date of birth']).dt.days / 365).astype(int)
+        df['Sex'] = pd.Categorical(df['Sex'])
+        df['Likes tomatoes'] = np.random.randint(2, size=df.shape[0]).astype(bool)
+        return df
+
+    st.subheader('Initial DataFrame')
+    st.dataframe(df)
+
+    st.subheader('Condition tree')
+
+    config = config_from_dataframe(df)
+    query_string = condition_tree(config)
+
+    st.code(query_string)
+
+    st.subheader('Filtered DataFrame')
+    df = df.query(query_string)
+    st.dataframe(df)
 
