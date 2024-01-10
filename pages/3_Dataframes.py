@@ -21,6 +21,5 @@ with tab_df_filtered:
   exp2 = st.expander("Example Dataframe With Dynamic Filter", expanded = True)
   with exp2:
     with st.echo(code_location = "below"):
-      #df = pd.DataFrame(np.random.randn(50, 20), columns=("col %d" % i for i in range(20)))
-      df_filtered = filter_dataframe(df)
-      st.dataframe(df_filtered)
+      df1 = pd.DataFrame(np.random.randn(50, 20), columns=("col %d" % i for i in range(20)))
+      st.dataframe(filter_dataframe(df1))
