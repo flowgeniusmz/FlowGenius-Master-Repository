@@ -1,7 +1,9 @@
 import streamlit as st
 
 '---'
+
 st.header('formatting for all items in library:')
+st.write('***for all examples, you must provide what packages you have to use within the desription')
 st.subheader('name of item')
 st.write('Description of what it does and how it does it (if that applies)')
 with st.expander("actual item displayed", expanded=True):
