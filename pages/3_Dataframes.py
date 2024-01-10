@@ -11,7 +11,7 @@ with tab_df_normal:
   ps.set_page_overview("Overview", "This section displays a basic dataframe using Pandas library. Dataframes can be created in many different ways - but displaying them is easy.")
   exp1 = st.expander("Example Dataframe", expanded = True)
   with exp1:
-    with st.echo():
+    with st.echo(code_location="below"):
       df = pd.DataFrame(np.random.randn(50, 20), columns=("col %d" % i for i in range(20)))
       st.dataframe(df)  # Same as st.write(df)
   
