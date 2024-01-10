@@ -4,3 +4,4 @@ hydralit_components # Config.PageSetup: Fancy UI widgets such as tabs, nav bar, 
 extra_streamlit_components # Config.PageSetup: Fancy UI Widgets
 streamlit_extras # Config.PageSetup: Fancy UI widgets
 pandas # 3_Dataframes.py: Used for data frames
+numpy # 3_Dataframes.py: Used for random number and data generation
