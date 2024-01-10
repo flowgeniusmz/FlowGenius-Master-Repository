@@ -1,2 +1,5 @@
 streamlit
-
+streamlit_elements # Config.PageSetup: Allows to apply custom themes and styling using HTML or CSS
+hydralit_components # Config.PageSetup: Fancy UI widgets such as tabs, nav bar, and metric cards
+extra_streamlit_components # Config.PageSetup: Fancy UI Widgets
+streamlit_extras # Config.PageSetup: Fancy UI widgets
