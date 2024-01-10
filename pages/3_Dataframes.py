@@ -24,12 +24,12 @@ with tab_df_filtered:
     with exp2:
         with st.echo(code_location="below"):
             df1 = pd.DataFrame(np.random.randn(50, 20), columns=("col %d" % i for i in range(20)))
-            st.dataframe(filter_dataframe(df1, 'filtered1'))
+            st.dataframe(dfFilter.filter_dataframe(df1, 'filtered1'))
 
 with tab_df_filtered2:
     exp3 = st.expander("Example Dataframe With Dynamic Filter Multiple Widgets", expanded=True)
     with exp3:
         with st.echo(code_location="below"):
             df2 = pd.read_csv("data/jetfuel_data.csv")
-            st.dataframe(filter_dataframe(df2, 'filtered2'))
+            st.dataframe(dfFilter.filter_dataframe(df2, 'filtered2'))
 
