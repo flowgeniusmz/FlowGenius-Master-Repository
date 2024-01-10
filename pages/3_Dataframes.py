@@ -22,4 +22,4 @@ with tab_df_filtered:
   with exp2:
     with st.echo(code_location = "below"):
       df1 = pd.DataFrame(np.random.randn(50, 20), columns=("col %d" % i for i in range(20)))
-      st.dataframe(filter_dataframe(df1))
+      st.dataframe(dfFilter.filter_dataframe(df1))
