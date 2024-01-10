@@ -14,9 +14,9 @@ with container1:
   ps.set_blue_header("This is section 1")
 
   cc = st.columns(2)
-  with cc[1]:
+  with cc[0]:
     ps.set_green_header("This is section 1.1")
-  with cc[2]:
+  with cc[1]:
     ps.set_green_header("This is section 1.2")
 
 
