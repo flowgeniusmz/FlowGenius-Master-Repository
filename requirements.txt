@@ -3,3 +3,4 @@ streamlit_elements # Config.PageSetup: Allows to apply custom themes and styling
 hydralit_components # Config.PageSetup: Fancy UI widgets such as tabs, nav bar, and metric cards
 extra_streamlit_components # Config.PageSetup: Fancy UI Widgets
 streamlit_extras # Config.PageSetup: Fancy UI widgets
+pandas # 3_Dataframes.py: Used for data frames
