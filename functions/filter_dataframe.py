@@ -1,19 +1,19 @@
 import streamlit as st
 import pandas as pd
-import numpy as np
 from pandas.api.types import (is_categorical_dtype, is_datetime64_any_dtype, is_numeric_dtype, is_object_dtype)
 
-def filter_dataframe(df: pd.DataFrame) -> pd.DataFrame:
+def filter_dataframe(df: pd.DataFrame, unique_key: str) -> pd.DataFrame:
     """
     Adds a UI on top of a dataframe to let viewers filter columns
 
     Args:
         df (pd.DataFrame): Original dataframe
+        unique_key (str): A unique identifier for this instance of the filter
 
     Returns:
         pd.DataFrame: Filtered dataframe
     """
-    modify = st.checkbox("Add filters")
+    modify = st.checkbox("Add filters", key=f'add_filters_{unique_key}')
 
     if not modify:
         return df
@@ -34,7 +34,7 @@ def filter_dataframe(df: pd.DataFrame) -> pd.DataFrame:
     modification_container = st.container()
 
     with modification_container:
-        to_filter_columns = st.multiselect("Filter dataframe on", df.columns)
+        to_filter_columns = st.multiselect("Filter dataframe on", df.columns, key=f'multiselect_{unique_key}')
         for column in to_filter_columns:
             left, right = st.columns((1, 20))
             # Treat columns with < 10 unique values as categorical
@@ -43,6 +43,7 @@ def filter_dataframe(df: pd.DataFrame) -> pd.DataFrame:
                     f"Values for {column}",
                     df[column].unique(),
                     default=list(df[column].unique()),
+                    key=f'cat_multiselect_{column}_{unique_key}'
                 )
                 df = df[df[column].isin(user_cat_input)]
             elif is_numeric_dtype(df[column]):
@@ -55,6 +56,7 @@ def filter_dataframe(df: pd.DataFrame) -> pd.DataFrame:
                     max_value=_max,
                     value=(_min, _max),
                     step=step,
+                    key=f'slider_{column}_{unique_key}'
                 )
                 df = df[df[column].between(*user_num_input)]
             elif is_datetime64_any_dtype(df[column]):
@@ -64,6 +66,7 @@ def filter_dataframe(df: pd.DataFrame) -> pd.DataFrame:
                         df[column].min(),
                         df[column].max(),
                     ),
+                    key=f'date_input_{column}_{unique_key}'
                 )
                 if len(user_date_input) == 2:
                     user_date_input = tuple(map(pd.to_datetime, user_date_input))
@@ -72,8 +75,9 @@ def filter_dataframe(df: pd.DataFrame) -> pd.DataFrame:
             else:
                 user_text_input = right.text_input(
                     f"Substring or regex in {column}",
+                    key=f'text_input_{column}_{unique_key}'
                 )
                 if user_text_input:
                     df = df[df[column].astype(str).str.contains(user_text_input)]
-#https://blog.streamlit.io/auto-generate-a-dataframe-filtering-ui-in-streamlit-with-filter_dataframe/
+
     return df
