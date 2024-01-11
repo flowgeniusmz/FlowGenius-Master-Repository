@@ -18,6 +18,6 @@ with tab_Pygwalker:
             #create a DataFrame with random values
             df = pd.DataFrame(np.random.randn(50, 20), columns=("col %d" % i for i in range(20)))
             st.dataframe(df)
-            pyg_html = pyg.walk(df, return_html=True)
-            components.html(pyg_html, height=1000, width=1000, scrolling=True)
+  pyg_html = pyg.walk(df, return_html=True)
+  components.html(pyg_html, height=1000, width=1000, scrolling=True)
         
