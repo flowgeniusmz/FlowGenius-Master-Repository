@@ -6,6 +6,7 @@ import numpy as np
 import streamlit.components.v1 as components
 #data Visualization UI
 import pygwalker as pyg
+st.set_page_config(layout="wide")
 
 # Set the title and page overview (assuming you have these functions in your 'ps' module)
 ps.set_title("FlowGenius", "Data Visualization")
