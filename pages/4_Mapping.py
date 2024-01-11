@@ -7,10 +7,10 @@ import folium
 
 # Set the title and page overview (assuming you have these functions in your 'ps' module)
 ps.set_title("FlowGenius", "Mapping")
-tab_mapping_simple, tab_mapping_moderate, tab_mapping_advanced, tab_mapping_ = st.tabs(["Normal Dataframe", "Filtered Dataframe", "Filtered Dataframe with Text", "Dataframe with Condition Tree"])
+ps.set_page_overview("Overview", "This section displays different types of maps, how you can interact with them and other utilities.")
+tab_map1, tab_map2, tab_map3, tab_map4= st.tabs(["Map 1", "Map 2", "map 3", "Map 4"])
 
-with tab_df_normal:
-    ps.set_page_overview("Overview", "This section displays a basic dataframe using Pandas library.")
+with tab_map1:
     exp1 = st.expander("Example Dataframe", expanded=True)
     with exp1:
         with st.echo(code_location="below"):
