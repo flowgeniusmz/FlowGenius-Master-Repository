@@ -1,17 +1,13 @@
-import streamlit as st
-import streamlit as st
-import pandas as pd
-import numpy as np
+#pulling page config
 from config import pagesetup as ps
-from functions import filter_dataframe as dfFilter
-from streamlit_condition_tree import condition_tree, config_from_dataframe
 
-
-
+#needed packages for mapping features
+import streamlit as st
+import folium
 
 # Set the title and page overview (assuming you have these functions in your 'ps' module)
-ps.set_title("FlowGenius", "Dataframes")
-tab_df_normal, tab_df_filtered, tab_df_filtered2, tab_df_conditiontree = st.tabs(["Normal Dataframe", "Filtered Dataframe", "Filtered Dataframe with Text", "Dataframe with Condition Tree"])
+ps.set_title("FlowGenius", "Mapping")
+tab_mapping_simple, tab_mapping_moderate, tab_mapping_advanced, tab_mapping_ = st.tabs(["Normal Dataframe", "Filtered Dataframe", "Filtered Dataframe with Text", "Dataframe with Condition Tree"])
 
 with tab_df_normal:
     ps.set_page_overview("Overview", "This section displays a basic dataframe using Pandas library.")
