@@ -21,5 +21,5 @@ with tab_Pygwalker:
             st.dataframe(df)
 with st.echo(code_location="below"):      
   pyg_html = pyg.walk(df, return_html=True)
-  components.html(pyg_html, height=1000, width=1000, scrolling=True)
+  components.html(pyg_html, height=1000, width=1500, scrolling=True)
         
