@@ -8,3 +8,4 @@ numpy # 3_Dataframes.py: Used for random number and data generation\
 streamlit-condition-tree #used for dataframes to display condition logic, also used for queries
 pygwalker #used for Tableau-style Data visualization, utilizing an incredibly user friendly UI
 folium #mapping library for data points (lat./long.) tethered to other data and displaying those items on an interactable map
+streamlit_folium #assistant library to the folium (mapping) library
