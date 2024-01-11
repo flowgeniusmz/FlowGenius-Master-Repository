@@ -5,9 +5,10 @@ import hydralit_components as hc
 import extra_streamlit_components as stx
 from streamlit_extras.metric_cards import style_metric_cards
 
-### 1. TITLE and SUBTITLE
+### 1. TITLE, SUBTITLE, and PAGE WIDTH
 def set_title(varTitle, varSubtitle):
         st.markdown(f"""<span style="font-weight: bold; font-size: 2em; color:#00b084;">{varTitle} </span> <span style="font-weight: bold; color:#0096D7; font-size:1.3em;">{varSubtitle}</span>""", unsafe_allow_html=True)
+        st.set_page_config(layout="wide")
         st.divider()
 
 def set_title_nodiv(varTitle, varSubtitle):
