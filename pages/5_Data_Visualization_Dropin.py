@@ -19,6 +19,7 @@ with tab_Pygwalker:
             #create a DataFrame with random values
             df = pd.DataFrame(np.random.randn(50, 20), columns=("col %d" % i for i in range(20)))
             st.dataframe(df)
+            st.write('Even this dataframe i sredundant because the dataframe already exists in the Pygwalker tab "Data"')
 with st.echo(code_location="below"):      
   pyg_html = pyg.walk(df, return_html=True)
   components.html(pyg_html, height=1000, width=1500, scrolling=True)
