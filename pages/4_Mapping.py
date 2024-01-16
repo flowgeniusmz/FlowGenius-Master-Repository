@@ -21,6 +21,10 @@ with tab_map1:
     with st.echo(code_location="below"):
         df = pd.DataFrame(np.random.randn(50, 20), columns=("col %d" % i for i in range(20)))
         st.dataframe(df)
+
+with tab_map2:
+   m = leafmap.Map()
+   m
 # dfSensors = get_dataframe(get_data_sensors())
 #         US_center = (39.8283, -98.5795)
 #         map = folium.Map(location=US_center, zoom_start=4)
