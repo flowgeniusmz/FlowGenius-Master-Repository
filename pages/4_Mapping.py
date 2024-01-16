@@ -8,6 +8,9 @@ from streamlit_folium import st_folium
 from folium import Popup  # Import the Popup class
 import pandas as pd
 
+#other mapping packages
+import leafmap.foliumap as leafmap
+
 # Set the title and page overview (assuming you have these functions in your 'ps' module)
 ps.set_title("FlowGenius", "Mapping")
 ps.set_page_overview("Overview", "This section displays different types of maps, how you can interact with them and other utilities.")
