@@ -18,4 +18,4 @@ pygwalker #used for Tableau-style Data visualization, utilizing an incredibly us
 folium #mapping library for data points (lat./long.) tethered to other data and displaying those items on an interactable map
 streamlit_folium #assistant library to the folium (mapping) library
 leafmap
-#leafmap.foliumap
+geopandas
