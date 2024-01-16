@@ -24,7 +24,7 @@ with tab_map1:
 with tab_map2:
    # with st.echo(code_location="below"):
    m = leafmap.Map()
-   m
+   
       
       # center=[50, 19], zoom=4,
       #    draw_control=True,
