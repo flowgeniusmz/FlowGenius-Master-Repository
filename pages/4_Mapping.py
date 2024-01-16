@@ -22,26 +22,14 @@ with tab_map1:
        st.write ("place map here")
 
 with tab_map2:
-   with st.echo(code_location="below"):
-      m = leafmap.Map(center=[50, 19], zoom=4,
-         draw_control=True,
-         measure_control=True,
-         fullscreen_control=True,
-         attribution_control=True,
-         height="450px", width="800px")  # center=[lat, lon], visibility of map controls, map height and width
-      m
-# dfSensors = get_dataframe(get_data_sensors())
-#         US_center = (39.8283, -98.5795)
-#         map = folium.Map(location=US_center, zoom_start=4)
-#         for _, sensor in dfSensors.iterrows():
-#             location = sensor['latitude'], sensor['longitude']
-#             folium.Marker(
-#                 location=location,
-#                 popup=Popup("Sensor Data", parse_html=False),
-#                 tooltip=f"Sensor at {location}",
-#             ).add_to(map)
-    
-#         st.header("Live read Sensor data")
-#         out = st_folium(map, width=1000)  # Capture the output into 'out'
-#         st.write("Popup:", out["last_object_clicked_popup"])
-#         st.write("Tooltip:", out["last_object_clicked_tooltip"])
+   # with st.echo(code_location="below"):
+   m = leafmap.Map()
+   m
+      
+      # center=[50, 19], zoom=4,
+      #    draw_control=True,
+      #    measure_control=True,
+      #    fullscreen_control=True,
+      #    attribution_control=True,
+      #    height="450px", width="800px")  # center=[lat, lon], visibility of map controls, map height and width
+      # m
