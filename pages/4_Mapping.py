@@ -23,8 +23,14 @@ with tab_map1:
         st.dataframe(df)
 
 with tab_map2:
-   m = leafmap.Map()
-   m
+   with st.echo(code_location="below"):
+      m = leafmap.Map(center=[50, 19], zoom=4,
+         draw_control=True,
+         measure_control=True,
+         fullscreen_control=True,
+         attribution_control=True,
+         height="450px", width="800px")  # center=[lat, lon], visibility of map controls, map height and width
+      m
 # dfSensors = get_dataframe(get_data_sensors())
 #         US_center = (39.8283, -98.5795)
 #         map = folium.Map(location=US_center, zoom_start=4)
