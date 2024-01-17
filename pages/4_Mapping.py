@@ -39,6 +39,6 @@ with tab_map3:
   with st.echo(code_location="below"):
     m=leafmap.Map(center=[0,0], zoom=2)
     in_geojson ='data/mapping.geojson'
-    m.add_geojson(layer_name="routing lines")
+    m.add_geojson(in_geojson, layer_name="routing lines")
     m.to_streamlit()  
 
