@@ -21,7 +21,7 @@ with tab_map2:
     # Filepath to the local CSV file
     filepath = 'data/Lat_Long_Data.csv'
     #initialize leafmap
-    m = leafmap.Map(tiles='stamentoner')
+    m = leafmap.Map()
     # Adding heatmap using the locally called data 'lat_long_Data.csv'
     m.add_heatmap(
       filepath,
