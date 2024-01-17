@@ -24,19 +24,28 @@ with tab_map1:
     with st.echo(code_location="below"):
        st.write ("place map here")
 
+import streamlit as st
+import leafmap
+
+# Assuming tab_map2 is a valid tab or page layout in your Streamlit app
 with tab_map2:
-   # with st.echo(code_location="below"):
-   def app():
-      filepath = st.file_uploader()
-      m = leafmap.Map(
-         center=[50, 19], zoom=4,
-         draw_control=True,
-         measure_control=True,
-         fullscreen_control=True,
-         attribution_control=True,
-         height="450px", width="800px"  # center=[lat, lon], visibility of map controls, map height and width
-      )
-      m.add_heatmap(filepath)
-      m.to_streamlit(height=700)
-      
-      
+    def app():
+        # File uploader widget
+        filepath = st.file_uploader("Upload your data", type=['csv', 'geojson', 'shapefile'])
+
+        # Check if a file is uploaded
+        if filepath is not None:
+            m = leafmap.Map(
+                center=[50, 19], zoom=4,
+                draw_control=True,
+                measure_control=True,
+                fullscreen_control=True,
+                attribution_control=True,
+                height="450px", width="800px"
+            )
+            # Adding heatmap
+            m.add_heatmap(filepath)
+            # Display the map
+            m.to_streamlit(height=700)
+    # Call the app function to run the app
+    app()
