@@ -20,6 +20,8 @@ tab_map1, tab_map2, tab_map3, tab_map4= st.tabs(["blocking Map (Pydeck)", "Heatm
 with tab_map1:
    st.expander("blocking Map (Pydeck)", expanded=True)
 with tab_map2:
+   #initialize leafmap
+   m = leafmap.Map()
    # Filepath to the local CSV file
    filepath = 'data/Lat_Long_Data.csv'
    # Read the CSV file into a DataFrame
