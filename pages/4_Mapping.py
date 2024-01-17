@@ -18,30 +18,30 @@ ps.set_page_overview("Overview", "This section displays different types of maps,
 tab_map1, tab_map2, tab_map3, tab_map4= st.tabs(["blocking Map (Pydeck)", "Heatmap ()", "map 3", "Map 4"])
 
 with tab_map1:
-   st.expander("blocking Map (Pydeck)", expanded=True)
+   st.expander("blocking Map (Pydeck)", expanded=True):
+      st.write('yo')
 with tab_map2:
-   def app():
-      #initialize leafmap
-      m = leafmap.Map()
-      # Filepath to the local CSV file
-      filepath = 'data/Lat_Long_Data.csv'
-      # Read the CSV file into a DataFrame
-      df = pd.read_csv(filepath)
-      # Adding heatmap using the locally called data 'lat_long_Data.csv'
-      m.add_heatmap(
-         data=df,
-         latitude='latitude',
-         longitude='longitude',
-         value='weight'
-      )
-      # Display the map
-      m.to_streamlit(height = 700)
-      #    center=[50, 19], zoom=4,
-      #    draw_control=True,
-      #    measure_control=True,
-      #    fullscreen_control=True,
-      #    attribution_control=True,
-      #    height="450px", width="800px"
-      # )
-   app()
+   #initialize leafmap
+   m = leafmap.Map()
+   # Filepath to the local CSV file
+   filepath = 'data/Lat_Long_Data.csv'
+   # Read the CSV file into a DataFrame
+   df = pd.read_csv(filepath)
+   # Adding heatmap using the locally called data 'lat_long_Data.csv'
+   m.add_heatmap(
+      data=df,
+      latitude='latitude',
+      longitude='longitude',
+      value='weight'
+   )
+   # Display the map
+   m.to_streamlit(height = 700)
+   #    center=[50, 19], zoom=4,
+   #    draw_control=True,
+   #    measure_control=True,
+   #    fullscreen_control=True,
+   #    attribution_control=True,
+   #    height="450px", width="800px"
+   # )
+
 
