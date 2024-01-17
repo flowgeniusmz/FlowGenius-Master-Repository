@@ -41,6 +41,7 @@ with tab_map2:
     )
   
 with tab_map3:
+  st.write ('testing')
   def app():
     filepath='data/Lat_Long_Data.csv'
     m=leafmap.Map(center= [0,0], zoom=2)
