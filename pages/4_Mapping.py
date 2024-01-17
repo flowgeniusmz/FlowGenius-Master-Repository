@@ -13,6 +13,7 @@ import geopandas
 import leafmap.foliumap as leafmap
 import leafmap
 
+m = leafmap.Map()
 
 # Set the title and page overview (assuming you have these functions in your 'ps' module)
 ps.set_title("FlowGenius", "Mapping")
@@ -39,5 +40,15 @@ with tab_map2:
       value='weight'
     )
   app()
-
+with tab_map3:
+  def app():
+    filepath='data/Lat_Long_Data.csv'
+    m=leafmap.Map()
+    m.add_heatmap(
+      data=df,
+      latitude='latitude',
+      longitude='longitude',
+      value='weight'
+    )
+  app()    
 
