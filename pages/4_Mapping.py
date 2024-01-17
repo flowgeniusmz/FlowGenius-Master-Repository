@@ -50,5 +50,5 @@ with tab_map3:
       longitude='longitude',
       value='weight'
     )
-  app()    
+      
 
