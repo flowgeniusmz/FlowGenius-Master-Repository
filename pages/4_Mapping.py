@@ -62,14 +62,4 @@ with tab_map2:
     app()
 
 with tab_map3:
-   def app():
-      filepath = 'data/Lat_Long_Data.csv'
-      df = pd.read.csv(filepath)
-      m = leafmap.Map()
-      m.add_heatmap(
-         filepath,
-         latitude='latitude',
-         longitude='longitude',
-         value='weight'
-      )
       m.to_streamlit(height=700)
