@@ -15,6 +15,8 @@ ps.set_page_overview("Overview", "This section displays different types of maps,
 tab_map1, tab_map2, tab_map3, tab_map4= st.tabs(["Traditional Map with markers (Folium)", "Heatmap (Leafmap-Folium)", "Cable Mapping(Leafmap-GeoJSON)", "Geo border (Leafmap)"])
 with tab_map1:
   st.write('folium map with markers and dscriptions')
+
+#Heatmap
 with tab_map2:
   with st.echo(code_location="below"):
     import leafmap.foliumap as leafmap
@@ -31,16 +33,14 @@ with tab_map2:
     )
     #Display the map
     m.to_streamlit(height = 700)
+
+#geojson "Cable mapping"
 with tab_map3:
-  st.write ('testing')
-  def app():
-    filepath='data/Lat_Long_Data.csv'
+  with st.echo(code_location="below"):
     m=leafmap.Map(center=[0,0], zoom=2)
-    m.add_heatmap(
-      data=df,
-      latitude='latitude',
-      longitude='longitude',
-      value='weight'
+    in_geojson ='data/Lat_Long_Data.csv'
+    m.add_geojson(
+      layer_name= "routing lines"
     )
-      
+    m.to_streamlit()  
 
