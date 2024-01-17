@@ -19,20 +19,11 @@ tab_map1, tab_map2, tab_map3, tab_map4= st.tabs(["blocking Map (Pydeck)", "Heatm
 
 with tab_map1:
    with st.expander("blocking Map (Pydeck)", expanded=True):
-    #with st.echo(code_location="below"):
-import streamlit as st
-import leafmap
-# Assuming tab_map2 is a valid tab or page layout in your Streamlit app
-import streamlit as st
-import leafmap
-import pandas as pd
 
-# Assuming tab_map2 is a valid tab or page layout in your Streamlit app
 with tab_map2:
     def app():
         # Filepath to the CSV file
         filepath = 'data/Lat_Long_Data.csv'
-        
         # Read the CSV file into a DataFrame
         df = pd.read_csv(filepath)
 
