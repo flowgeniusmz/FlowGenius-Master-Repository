@@ -16,13 +16,11 @@ ps.set_title("FlowGenius", "Mapping")
 
 ps.set_page_overview("Overview", "This section displays different types of maps, how you can interact with them and other utilities.")
 tab_map1, tab_map2, tab_map3, tab_map4= st.tabs(["blocking Map (Pydeck)", "Heatmap ()", "map 3", "Map 4"])
-m = leafmap.Map()
-m
 
 with tab_map1:
    with st.expander("blocking Map (Pydeck)", expanded=True):
-    with st.echo(code_location="below"):
-       st.write ("place map here")
+    #with st.echo(code_location="below"):
+       m = leafmap.Map()
 
 import streamlit as st
 import leafmap
