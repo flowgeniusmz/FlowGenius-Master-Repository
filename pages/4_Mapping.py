@@ -42,14 +42,14 @@ with tab_map2:
         df = pd.read_csv(filepath)
 
         # Initialize the map
-        m = leafmap.Map(tiles="stamentoner",
-            center=[50, 19], zoom=4,
-            draw_control=True,
-            measure_control=True,
-            fullscreen_control=True,
-            attribution_control=True,
-            height="450px", width="800px"
-        )
+        # m = leafmap.Map(tiles="stamentoner",
+        #     center=[50, 19], zoom=4,
+        #     draw_control=True,
+        #     measure_control=True,
+        #     fullscreen_control=True,
+        #     attribution_control=True,
+        #     height="450px", width="800px"
+        # )
 
         # Adding heatmap using the DataFrame
         # Replace 'latitude', 'longitude', and 'weight' with your actual column names if they are different
