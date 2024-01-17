@@ -11,9 +11,6 @@ import geopandas
 
 #other mapping packages
 import leafmap.foliumap as leafmap
-import leafmap
-
-m = leafmap.Map()
 
 # Set the title and page overview (assuming you have these functions in your 'ps' module)
 ps.set_title("FlowGenius", "Mapping")
@@ -21,13 +18,10 @@ ps.set_page_overview("Overview", "This section displays different types of maps,
 tab_map1, tab_map2, tab_map3, tab_map4= st.tabs(["blocking Map (Pydeck)", "Heatmap ()", "map 3", "Map 4"])
 with tab_map1:
   st.write('folium map with markers and dscriptions')
-  
 with tab_map2:
   def app():
     #initialize leafmap
-    m = leafmap.Map()
-    #Display the map
-    m.to_streamlit(height = 700)
+    m = leafmap.Map(center=[0,0], zoom=2)
     # Filepath to the local CSV file
     filepath = 'data/Lat_Long_Data.csv'
     # Read the CSV file into a DataFrame
@@ -39,12 +33,13 @@ with tab_map2:
       longitude='longitude',
       value='weight'
     )
-  
+  #Display the map
+  m.to_streamlit(height = 700)
 with tab_map3:
   st.write ('testing')
   def app():
     filepath='data/Lat_Long_Data.csv'
-    m=leafmap.Map(center= [0,0], zoom=2)
+    m=leafmap.Map(center=[0,0], zoom=2)
     m.add_heatmap(
       data=df,
       latitude='latitude',
