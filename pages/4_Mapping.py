@@ -42,7 +42,7 @@ with tab_map2:
         df = pd.read_csv(filepath)
 
         # Initialize the map
-        m = leafmap.Map(
+        m = leafmap.Map(tiles="stamentoner",
             center=[50, 19], zoom=4,
             draw_control=True,
             measure_control=True,
