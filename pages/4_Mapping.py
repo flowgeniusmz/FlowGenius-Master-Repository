@@ -38,7 +38,7 @@ with tab_map2:
         # Read the CSV file into a DataFrame
         df = pd.read_csv(filepath)
 
-        Initialize the map
+        #Initialize the map
         m = leafmap.Map(
             center=[50, 19], zoom=4,
             draw_control=True,
