@@ -18,7 +18,9 @@ import leafmap
 ps.set_title("FlowGenius", "Mapping")
 ps.set_page_overview("Overview", "This section displays different types of maps, how you can interact with them and other utilities.")
 tab_map1, tab_map2, tab_map3, tab_map4= st.tabs(["blocking Map (Pydeck)", "Heatmap ()", "map 3", "Map 4"])
-
+with tab_map1:
+  st.write('folium map with markers and dscriptions')
+  
 with tab_map2:
   def app():
     #initialize leafmap
