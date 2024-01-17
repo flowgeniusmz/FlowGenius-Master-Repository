@@ -19,7 +19,7 @@ tab_map1, tab_map2, tab_map3, tab_map4= st.tabs(["blocking Map (Pydeck)", "Heatm
 
 with tab_map1:
    with st.expander("blocking Map (Pydeck)", expanded=True)
-   st.map()
+      st.map()
 with tab_map2:
    # Filepath to the local CSV file
    filepath = 'data/Lat_Long_Data.csv'
