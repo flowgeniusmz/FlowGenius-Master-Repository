@@ -21,25 +21,22 @@ with tab_map1:
    with st.expander("blocking Map (Pydeck)", expanded=True):
 
 with tab_map2:
-    def app():
-        # Filepath to the CSV file
-        filepath = 'data/Lat_Long_Data.csv'
-        # Read the CSV file into a DataFrame
-        df = pd.read_csv(filepath)
+   # Filepath to the CSV file
+   filepath = 'data/Lat_Long_Data.csv'
+   # Read the CSV file into a DataFrame
+   df = pd.read_csv(filepath)
 
 
-        # Adding heatmap using the locally called data 'lat_long_Data.csv'
-        m.add_heatmap(data=df, latitude='latitude', longitude='longitude', value='weight')
-        # Display the map
-        m.to_streamlit(
-            center=[50, 19], zoom=4,
-            draw_control=True,
-            measure_control=True,
-            fullscreen_control=True,
-            attribution_control=True,
-            height="450px", width="800px"
-        )
-
-    # Call the app function to run the app
-    app()
+   # Adding heatmap using the locally called data 'lat_long_Data.csv'
+   m.add_heatmap(data=df, latitude='latitude', longitude='longitude', value='weight')
+   # Display the map
+   m.to_streamlit(
+      center=[50, 19], zoom=4,
+      draw_control=True,
+      measure_control=True,
+      fullscreen_control=True,
+      attribution_control=True,
+      height="450px", width="800px"
+   )
+   
 
