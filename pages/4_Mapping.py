@@ -21,29 +21,29 @@ with tab_map1:
   with st.expander("blocking Map (Pydeck)", expanded=True):
       st.write('yo')
 with tab_map2:
-def app():
-   #initialize leafmap
-   m = leafmap.Map()
-   # Filepath to the local CSV file
-   filepath = 'data/Lat_Long_Data.csv'
-   # Read the CSV file into a DataFrame
-   df = pd.read_csv(filepath)
-   # Adding heatmap using the locally called data 'lat_long_Data.csv'
-   m.add_heatmap(
-      data=df,
-      latitude='latitude',
-      longitude='longitude',
-      value='weight'
-   )
-   # Display the map
-   m.to_streamlit(height = 700)
-   #    center=[50, 19], zoom=4,
-   #    draw_control=True,
-   #    measure_control=True,
-   #    fullscreen_control=True,
-   #    attribution_control=True,
-   #    height="450px", width="800px"
-   # )
-app()
+  def app():
+    #initialize leafmap
+     m = leafmap.Map()
+     # Filepath to the local CSV file
+     filepath = 'data/Lat_Long_Data.csv'
+     # Read the CSV file into a DataFrame
+     df = pd.read_csv(filepath)
+     # Adding heatmap using the locally called data 'lat_long_Data.csv'
+     m.add_heatmap(
+        data=df,
+        latitude='latitude',
+        longitude='longitude',
+        value='weight'
+     )
+     # Display the map
+     m.to_streamlit(height = 700)
+     #    center=[50, 19], zoom=4,
+     #    draw_control=True,
+     #    measure_control=True,
+     #    fullscreen_control=True,
+     #    attribution_control=True,
+     #    height="450px", width="800px"
+     # )
+  app()
 
 
