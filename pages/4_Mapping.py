@@ -10,7 +10,7 @@ import pandas as pd
 
 #other mapping packages
 import leafmap.foliumap as leafmap
-
+import leafmap
 # Set the title and page overview (assuming you have these functions in your 'ps' module)
 ps.set_title("FlowGenius", "Mapping")
 
