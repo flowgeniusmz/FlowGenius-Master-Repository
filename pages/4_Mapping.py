@@ -26,6 +26,7 @@ with tab_map2:
     filepath = 'data/Lat_Long_Data.csv'
     # Read the CSV file into a DataFrame
     df = pd.read_csv(filepath)
+    print(df.head())
     # Adding heatmap using the locally called data 'lat_long_Data.csv'
     m.add_heatmap(
       data=df,
