@@ -9,9 +9,6 @@ from folium import Popup  # Import the Popup class
 import pandas as pd
 import geopandas
 
-#other mapping packages
-import leafmap.foliumap as leafmap
-
 # Set the title and page overview (assuming you have these functions in your 'ps' module)
 ps.set_title("FlowGenius", "Mapping")
 ps.set_page_overview("Overview", "This section displays different types of maps, how you can interact with them and other utilities.")
@@ -19,17 +16,15 @@ tab_map1, tab_map2, tab_map3, tab_map4= st.tabs(["blocking Map (Pydeck)", "Heatm
 with tab_map1:
   st.write('folium map with markers and dscriptions')
 with tab_map2:
-  def app():
-    #initialize leafmap
-    m = leafmap.Map(center=[0,0], zoom=2)
+  with st.echo():
+    import leafmap.foliumap as leafmap
     # Filepath to the local CSV file
     filepath = 'data/Lat_Long_Data.csv'
-    # Read the CSV file into a DataFrame
-    df = pd.read_csv(filepath)
-    print(df)
+    #initialize leafmap
+    m = leafmap.Map(tiles='stamentoner')
     # Adding heatmap using the locally called data 'lat_long_Data.csv'
     m.add_heatmap(
-      data=df,
+      filepath,
       latitude='latitude',
       longitude='longitude',
       value='weight'
