@@ -26,14 +26,17 @@ with tab_map1:
 
 with tab_map2:
    # with st.echo(code_location="below"):
-   m = leafmap.Map(
-      center=[50, 19], zoom=4,
-      draw_control=True,
-      measure_control=True,
-      fullscreen_control=True,
-      attribution_control=True,
-      height="450px", width="800px"  # center=[lat, lon], visibility of map controls, map height and width
-   )
-   m.add_heatmap()
+   def app():
+      filepath = st.file_uploader()
+      m = leafmap.Map(
+         center=[50, 19], zoom=4,
+         draw_control=True,
+         measure_control=True,
+         fullscreen_control=True,
+         attribution_control=True,
+         height="450px", width="800px"  # center=[lat, lon], visibility of map controls, map height and width
+      )
+      m.add_heatmap(filepath)
+      m.to_streamlit(height=700)
       
       
