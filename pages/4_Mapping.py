@@ -21,7 +21,6 @@ with tab_map1:
    with st.expander("blocking Map (Pydeck)", expanded=True):
     #with st.echo(code_location="below"):
       m = leafmap.Map()
-      m.
 import streamlit as st
 import leafmap
 
