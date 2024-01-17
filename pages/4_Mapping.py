@@ -16,7 +16,7 @@ tab_map1, tab_map2, tab_map3, tab_map4= st.tabs(["Traditional Map with markers (
 with tab_map1:
   st.write('folium map with markers and dscriptions')
 with tab_map2:
-  with st.echo(below):
+  with st.echo(code_location="below"):
     import leafmap.foliumap as leafmap
     # Filepath to the local CSV file
     filepath = 'data/Lat_Long_Data.csv'
