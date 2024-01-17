@@ -29,7 +29,7 @@ with tab_map2:
    # Adding heatmap using the locally called data 'lat_long_Data.csv'
    m.add_heatmap(data=df, latitude='latitude', longitude='longitude', value='weight')
    # Display the map
-   m.to_streamlit()
+   m.to_streamlit(height = 700)
    #    center=[50, 19], zoom=4,
    #    draw_control=True,
    #    measure_control=True,
