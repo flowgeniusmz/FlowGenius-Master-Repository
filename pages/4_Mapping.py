@@ -28,25 +28,35 @@ import streamlit as st
 import leafmap
 
 # Assuming tab_map2 is a valid tab or page layout in your Streamlit app
+import streamlit as st
+import leafmap
+import pandas as pd
+
+# Assuming tab_map2 is a valid tab or page layout in your Streamlit app
 with tab_map2:
     def app():
-        # File uploader widget
-         filepath = 'data/Lat._Long._Data.csv'
-        #filepath = st.file_uploader("Upload your data", type=['csv', 'geojson', 'shapefile'])
-         df = pd.read_csv(filepath)
-        # Check if a file is uploaded
-         if filepath is not None:
-            m = leafmap.Map(
-                center=[50, 19], zoom=4,
-                draw_control=True,
-                measure_control=True,
-                fullscreen_control=True,
-                attribution_control=True,
-                height="450px", width="800px"
-            )
-            # Adding heatmap
-            m.add_heatmap(filepath)
-            # Display the map
-            m.to_streamlit(height=700)
+        # Filepath to the CSV file
+        filepath = 'data/Lat_Long_Data.csv'
+        
+        # Read the CSV file into a DataFrame
+        df = pd.read_csv(filepath)
+
+        # Initialize the map
+        m = leafmap.Map(
+            center=[50, 19], zoom=4,
+            draw_control=True,
+            measure_control=True,
+            fullscreen_control=True,
+            attribution_control=True,
+            height="450px", width="800px"
+        )
+
+        # Adding heatmap using the DataFrame
+        # Replace 'latitude', 'longitude', and 'weight' with your actual column names if they are different
+        m.add_heatmap(data=df, latitude='latitude', longitude='longitude', value='weight')
+
+        # Display the map
+        m.to_streamlit(height=700)
+
     # Call the app function to run the app
     app()
