@@ -7,6 +7,7 @@ import folium
 from streamlit_folium import st_folium
 from folium import Popup  # Import the Popup class
 import pandas as pd
+import geopandas
 
 #other mapping packages
 import leafmap.foliumap as leafmap
