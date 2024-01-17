@@ -20,8 +20,8 @@ tab_map1, tab_map2, tab_map3, tab_map4= st.tabs(["blocking Map (Pydeck)", "Heatm
 with tab_map1:
    with st.expander("blocking Map (Pydeck)", expanded=True):
     #with st.echo(code_location="below"):
-       m = leafmap.Map()
-
+      m = leafmap.Map()
+      m.
 import streamlit as st
 import leafmap
 
@@ -40,7 +40,7 @@ with tab_map2:
         df = pd.read_csv(filepath)
 
         # Initialize the map
-        # m = leafmap.Map(tiles="stamentoner",
+        # m = leafmap.Map(
         #     center=[50, 19], zoom=4,
         #     draw_control=True,
         #     measure_control=True,
@@ -49,8 +49,7 @@ with tab_map2:
         #     height="450px", width="800px"
         # )
 
-        # Adding heatmap using the DataFrame
-        # Replace 'latitude', 'longitude', and 'weight' with your actual column names if they are different
+        # Adding heatmap using the locally called data 'lat_long_Data.csv'
         m.add_heatmap(data=df, latitude='latitude', longitude='longitude', value='weight')
 
         # Display the map
@@ -60,4 +59,4 @@ with tab_map2:
     app()
 
 with tab_map3:
-      m.to_streamlit(height=700)
+      
