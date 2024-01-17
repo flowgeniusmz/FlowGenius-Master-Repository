@@ -33,8 +33,8 @@ with tab_map2:
       longitude='longitude',
       value='weight'
     )
-  #Display the map
-  m.to_streamlit(height = 700)
+    #Display the map
+    m.to_streamlit(height = 700)
 with tab_map3:
   st.write ('testing')
   def app():
