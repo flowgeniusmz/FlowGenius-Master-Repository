@@ -11,15 +11,13 @@ import pandas as pd
 #other mapping packages
 import leafmap.foliumap as leafmap
 import leafmap
+
+
 # Set the title and page overview (assuming you have these functions in your 'ps' module)
 ps.set_title("FlowGenius", "Mapping")
-
 ps.set_page_overview("Overview", "This section displays different types of maps, how you can interact with them and other utilities.")
 tab_map1, tab_map2, tab_map3, tab_map4= st.tabs(["blocking Map (Pydeck)", "Heatmap ()", "map 3", "Map 4"])
 
-with tab_map1:
-  with st.expander("blocking Map (Pydeck)", expanded=True):
-      st.write('yo')
 with tab_map2:
   def app():
     #initialize leafmap
