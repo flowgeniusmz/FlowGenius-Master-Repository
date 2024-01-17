@@ -31,10 +31,11 @@ import leafmap
 with tab_map2:
     def app():
         # File uploader widget
-        filepath = st.file_uploader("Upload your data", type=['csv', 'geojson', 'shapefile'])
-
+         filepath = 'data/Lat._Long._Data.csv'
+        #filepath = st.file_uploader("Upload your data", type=['csv', 'geojson', 'shapefile'])
+         df = pd.read_csv(filepath)
         # Check if a file is uploaded
-        if filepath is not None:
+         if filepath is not None:
             m = leafmap.Map(
                 center=[50, 19], zoom=4,
                 draw_control=True,
