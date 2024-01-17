@@ -9,6 +9,8 @@ from folium import Popup  # Import the Popup class
 import pandas as pd
 import geopandas
 
+#https://leafmap.org/notebooks/06_legend/ (would love to incorporate a legend to these maps, and also link them to the data sets)
+
 # Set the title and page overview (assuming you have these functions in your 'ps' module)
 ps.set_title("FlowGenius", "Mapping")
 ps.set_page_overview("Overview", "This section displays different types of maps, how you can interact with them and other utilities.")
