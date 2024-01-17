@@ -18,15 +18,13 @@ ps.set_page_overview("Overview", "This section displays different types of maps,
 tab_map1, tab_map2, tab_map3, tab_map4= st.tabs(["blocking Map (Pydeck)", "Heatmap ()", "map 3", "Map 4"])
 
 with tab_map1:
-   with st.expander("blocking Map (Pydeck)", expanded=True):
-
+   with st.expander("blocking Map (Pydeck)", expanded=True)
+   st.map()
 with tab_map2:
-   # Filepath to the CSV file
+   # Filepath to the local CSV file
    filepath = 'data/Lat_Long_Data.csv'
    # Read the CSV file into a DataFrame
    df = pd.read_csv(filepath)
-
-
    # Adding heatmap using the locally called data 'lat_long_Data.csv'
    m.add_heatmap(data=df, latitude='latitude', longitude='longitude', value='weight')
    # Display the map
