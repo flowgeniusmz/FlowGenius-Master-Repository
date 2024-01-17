@@ -39,7 +39,7 @@ with tab_map2:
       longitude='longitude',
       value='weight'
     )
-  app()
+  
 with tab_map3:
   def app():
     filepath='data/Lat_Long_Data.csv'
