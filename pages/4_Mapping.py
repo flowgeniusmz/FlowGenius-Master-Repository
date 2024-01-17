@@ -22,7 +22,6 @@ with tab_map1:
 with tab_map2:
    #initialize leafmap
    m = leafmap.Map()
-   m
    # Filepath to the local CSV file
    filepath = 'data/Lat_Long_Data.csv'
    # Read the CSV file into a DataFrame
@@ -38,5 +37,5 @@ with tab_map2:
    #    attribution_control=True,
    #    height="450px", width="800px"
    # )
-   
+   m
 
