@@ -61,7 +61,7 @@ with tab_map2:
     # Call the app function to run the app
     app()
 
-with tab_map2:
+with tab_map3:
    def app():
       filepath = 'data/Lat_Long_Data.csv'
       df = pd.read.csv(filepath)
