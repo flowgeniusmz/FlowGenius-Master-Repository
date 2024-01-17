@@ -21,6 +21,7 @@ with tab_map1:
   with st.expander("blocking Map (Pydeck)", expanded=True):
       st.write('yo')
 with tab_map2:
+  def app():
    #initialize leafmap
    m = leafmap.Map()
    # Filepath to the local CSV file
@@ -43,5 +44,6 @@ with tab_map2:
    #    attribution_control=True,
    #    height="450px", width="800px"
    # )
+app()
 
 
